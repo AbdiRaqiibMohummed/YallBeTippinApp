@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct MenuListView: View {
-    @StateObject var vm = MenuListVM()
+    @State var vm = MenuListVM()
     
     var body: some View {
-        List($vm.items){ $item in 
-            Text(item.name)
+        List($vm.items){ $item in
+                MenuItemView(item: $item)
         }
+        .navigationTitle("Menu")
     }
 }
 

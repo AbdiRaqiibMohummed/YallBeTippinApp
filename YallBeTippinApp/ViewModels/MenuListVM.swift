@@ -6,10 +6,14 @@
 //
 // final keyword means that no other classes cant inherit from it
 
-import Foundation
+// We use @published becasue we are using a class in the menu list view and its observable meaning that we have to use @published , remember this is old ways , the new imporved simpler way is sticking to normal state and importing Observation and using The @Observable keyword
 
-final class MenuListVM: ObservableObject {
-    @Published var items: [MenuItem] = [
+import Foundation
+import Observation
+
+
+@Observable final class MenuListVM {
+    var items: [MenuItem] = [
         MenuItem(name: "Burger", price: 12.5, img: "burger"),
         MenuItem(name: "Chow mein", price: 13, img: "chowMein"),
         MenuItem(name: "Dumplings", price: 7, img: "dumplings"),
